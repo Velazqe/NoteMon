@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    flex: 1;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.nav-wrapper .brand-logo {
+    padding-left: 20px;
+}
+
+.collection-header {
+    background-color: #00acc1;
+    color: white;
+    padding: 10px;
+}
+
+.collection {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0px;
+}
+
+.collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.collection-item:hover {
+    background-color: #f0f0f0;
+}
+
+.collection-item a {
+    color: #f44336;
+    cursor: pointer;
+}
+
+#clearForm, #saveNote, #newNote {
+    display: none;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+ }
+
+ h5 {
+    color: gray;
+ }
+
+ .noteLabel {
+    font-size: xx-large;
+ }
+
+ .input-field[type="text"] {
+    font-size: xx-large;
+ }
+
+ #noteTitle {
+    font-size: 72px;
+    font-weight: bold;
+    height: 100px;  
+    line-height: 50px; 
+    padding: 0 10px; 
+    color: rgb(175, 173, 173);
+    border-bottom: 0px;
+}
+
+/* Optional: Adjusting font size for note text for consistency */
+#noteText {
+    font-size: 16px;
+    border-bottom: 0px;
+}
+
+.row .col.s3 {
+    margin-left: 0%;
+    padding: 0%;
+    border-bottom-color: transparent;
+    border-bottom: 0px;
+}
+
+.collection.with-header .collection-header{
+    border-bottom: 0px; 
+}
+
+.collection .collection-item {
+    border-color: white;
+}

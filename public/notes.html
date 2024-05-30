@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taker</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper cyan">
+                <a href="#" class="brand-logo">Note Taker</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#" id="clearForm" class="red-text">Clear Form</a></li>
+                    <li><a href="#" id="saveNote" class="green-text">Save Note</a></li>
+                    <li><a href="#" id="newNote" class="blue-text">New Note</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col s3 noteContainer">
+            <ul id="noteList" class="collection with-header">
+            </ul>
+        </div>
+        <div class="col s8">
+            <div class="input-field">
+                <input id="noteTitle" type="text" class="validate">
+                <label for="noteTitle" class="noteLabel"></label>
+            </div>
+            <div class="input-field">
+                <textarea id="noteText" class="materialize-textarea"></textarea>
+                <label for="noteText"></label>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
