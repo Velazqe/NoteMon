@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(175, 173, 173);
     background-color: #fff;
     transition: background-color 0.3s ease;
 }
@@ -75,7 +75,7 @@ body {
     line-height: 50px; 
     padding: 0 10px; 
     color: rgb(175, 173, 173);
-    border-bottom: 0px;
+    border-bottom: 1px;
 }
 
 /* Optional: Adjusting font size for note text for consistency */
@@ -87,14 +87,23 @@ body {
 .row .col.s3 {
     margin-left: 0%;
     padding: 0%;
-    border-bottom-color: transparent;
-    border-bottom: 0px;
+    border-bottom: 1px solid rgb(175, 173, 173);
+    border-right: 1px solid rgb(175, 173, 173) ;
+    height: 100%;
 }
 
 .collection.with-header .collection-header{
-    border-bottom: 0px; 
+    border-bottom: 1px; 
 }
 
 .collection .collection-item {
-    border-color: white;
+    border-bottom: 1px solid;
+    border-color: rgb(175, 173, 173);
+}
+
+.row .col.s8 {
+    width: 66.6666666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
 }
