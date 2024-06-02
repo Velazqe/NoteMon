@@ -6,14 +6,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const saveNote = document.getElementById('saveNote');
     const newNote = document.getElementById('newNote');
 
-    let notes = [];
-    let currentNoteId = null;
+    let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
-    async function fetchNotes() {
-        const res = await fetch('/api/notes');
-        notes = await res.json();
-        renderNotes();
+    if (notes.length === 0) {
+        notes = [
+            { id: '1', title: 'Call bank on Friday', text: 'Need to discuss loan options' },
+            { id: '2', title: 'Reschedule delivery', text: 'Contact delivery service' },
+            { id: '3', title: 'Finish payroll', text: 'Complete payroll processing' },
+            { id: '4', title: 'Check in with clients', text: 'Update clients on project status' },
+            { id: '5', title: 'Client lunch on Thursday', text: 'Schedule lunch meeting' }
+        ];
+        localStorage.setItem('notes', JSON.stringify(notes));
     }
+
+    let currentNoteId = null;
 
     function renderNotes() {
         noteList.innerHTML = '<li class="collection-header"><h5>Notes</h5></li>';
@@ -42,22 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
         clearForm.style.display = 'none';
     }
 
-    async function saveCurrentNote() {
-        const newNote = {
-            title: noteTitle.value,
-            text: noteText.value
-        };
-
-        const res = await fetch('/api/notes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newNote)
-        });
-
-        const savedNote = await res.json();
-        notes.push(savedNote);
+    function saveCurrentNote() {
+        if (currentNoteId) {
+            const note = notes.find(note => note.id === currentNoteId);
+            note.title = noteTitle.value;
+            note.text = noteText.value;
+        } else {
+            const newNote = {
+                id: Date.now().toString(),
+                title: noteTitle.value,
+                text: noteText.value
+            };
+            notes.push(newNote);
+        }
+        localStorage.setItem('notes', JSON.stringify(notes));
         renderNotes();
         clearFormFields();
     }
@@ -91,13 +95,11 @@ document.addEventListener('DOMContentLoaded', function () {
         clearForm.style.display = 'block';
     });
 
-    window.deleteNote = async function (id) {
+    window.deleteNote = function (id) {
         notes = notes.filter(note => note.id !== id);
-        await fetch(`/api/notes/${id}`, {
-            method: 'DELETE'
-        });
+        localStorage.setItem('notes', JSON.stringify(notes));
         renderNotes();
     };
 
-    fetchNotes();
+    renderNotes();
 });

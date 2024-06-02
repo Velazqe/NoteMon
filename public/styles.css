@@ -107,3 +107,51 @@ body {
     left: auto;
     right: auto;
 }
+
+.btn-new-note, .btn-save-note, .btn-clear-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+}
+
+.btn-new-note i.material-icons, .btn-save-note i.material-icons, .btn-clear-form i.material-icons {
+    margin-right: 10px;
+}
+
+.btn-new-note:hover, .btn-save-note:hover, .btn-clear-form:hover {
+    background-color: #ffffff;
+}
+
+.btn-new-note:hover {
+    color: #00acc1;
+}
+
+.btn-save-note {
+    border-color: #ffffff;
+}
+
+.btn-save-note:hover {
+    color: #00acc1;
+}
+
+.btn-clear-form {
+    border-color: #f44336;
+}
+
+.btn-clear-form:hover {
+    color: #f44336;
+}
+
+nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 4px;
+}
